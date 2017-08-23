@@ -1,3 +1,16 @@
 <resources>
-    <string name="app_name">Maket</string>
+    <string name="app_name">Гэрийн автоматжуулалт</string>
+    <string name="fountain">Усан оргилуур</string>
+    <string name="garage">Гарашын хаалга</string>
+    <string name="room1">I өрөө</string>
+    <string name="room2">II өрөө</string>
+    <string name="room3">III өрөө</string>
+    <string name="room4">IV өрөө</string>
+    <string name="room5">V өрөө</string>
+    <string name="room6">VI өрөө</string>
+    <string name="roadBlock">Замын хаалт</string>
+    <string name="outside">Гадна талбай</string>
+
+
+
 </resources>

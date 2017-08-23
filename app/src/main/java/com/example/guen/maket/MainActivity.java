@@ -22,6 +22,7 @@ import java.lang.reflect.Method;
 import java.util.Set;
 import java.util.UUID;
 import android.view.View;
+import android.widget.ToggleButton;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -296,5 +297,24 @@ public class MainActivity extends AppCompatActivity {
             }
         }
 
+    }
+
+    public void fountain_light_Click(View view)
+    {
+        boolean checked = ((ToggleButton) view).isChecked();
+        if(checked)
+        {
+            if (isConnected) {
+                byte[] b = Constants.FOUNTAIN_LON.getBytes();
+                mConnectedThread.write(b);
+            }
+        }
+        else
+        {
+            if (isConnected) {
+                byte[] b = Constants.FOUNTAIN_LOFF.getBytes();
+                mConnectedThread.write(b);
+            }
+        }
     }
 }
