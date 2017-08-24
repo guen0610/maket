@@ -1,279 +1,204 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context="com.example.guen.maket.MainActivity">
+    <LinearLayout
+        android:id="@+id/page1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        android:padding="20dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ToggleButton
+            android:id="@+id/fountain_motor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Усан оргилуур"
+            android:textOff="Усан оргилуур"
+            android:onClick="button_on_Click"/>
+        <ToggleButton
+            android:id="@+id/garage_motor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Гарашын хаалга"
+            android:textOff="Гарашын хаалга"
+            android:onClick="button_on_Click"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+        <ToggleButton
+            android:id="@+id/road_motor"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Замын хаалт"
+            android:textOff="Замын хаалт"
+            android:onClick="button_on_Click"/>
+        <ToggleButton
+            android:id="@+id/curtains"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Хөшиг"
+            android:textOff="Хөшиг"
+            android:onClick="curtain_activity"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
+
+        <ToggleButton
+            android:id="@+id/fire_alarm"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="button_on_Click"
+            android:padding="30dp"
+            android:textOff="Галын дохиолол"
+            android:textOn="Галын дохиолол" />
+
+        <ToggleButton
+            android:id="@+id/lights"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:onClick="light_activity"
+            android:padding="30dp"
+            android:textOff="Гэрэл"
+            android:textOn="Гэрэл" />
+    </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/page2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:visibility="visible">
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
             android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/fountain"/>
-
-            <ToggleButton
-                android:id="@+id/fountain_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="fountain_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-            <ToggleButton
-                android:id="@+id/fountain_gear"
-                android:layout_width="39dp"
-                android:layout_height="35dp"
-                android:background="@drawable/gear"
-                android:checked="false"
-                android:onClick="fountain_gear_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/garage"/>
-
-            <ToggleButton
-                android:id="@+id/garage_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="garage_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-            <ToggleButton
-                android:id="@+id/garage_gear"
-                android:layout_width="39dp"
-                android:layout_height="35dp"
-                android:background="@drawable/gear"
-                android:checked="false"
-                android:onClick="garage_gear_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/roadBlock"/>
-
-            <ToggleButton
-                android:id="@+id/roadBlock_gear"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/gear"
-                android:checked="false"
-                android:onClick="roadBlock_gear_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/outside"/>
-
-            <ToggleButton
-                android:id="@+id/outside_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="outside_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/room1"/>
-
             <ToggleButton
                 android:id="@+id/room1_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="room1_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-            <ToggleButton
-                android:id="@+id/room1_gear"
-                android:layout_width="39dp"
-                android:layout_height="35dp"
-                android:background="@drawable/gear"
-                android:checked="false"
-                android:onClick="room1_gear_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/room2"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
 
             <ToggleButton
                 android:id="@+id/room2_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="room2_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-            <ToggleButton
-                android:id="@+id/room2_gear"
-                android:layout_width="39dp"
-                android:layout_height="35dp"
-                android:background="@drawable/gear"
-                android:checked="false"
-                android:onClick="room2_gear_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/room3"/>
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
 
             <ToggleButton
                 android:id="@+id/room3_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="room3_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-            <ToggleButton
-                android:id="@+id/room3_gear"
-                android:layout_width="39dp"
-                android:layout_height="35dp"
-                android:background="@drawable/gear"
-                android:checked="false"
-                android:onClick="room3_gear_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
         </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/room4"/>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
             <ToggleButton
                 android:id="@+id/room4_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="room4_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/room5"/>
-
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
             <ToggleButton
                 android:id="@+id/room5_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="room5_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/room6"/>
-
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
             <ToggleButton
                 android:id="@+id/room6_light"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:background="@drawable/check"
-                android:checked="false"
-                android:onClick="room6_light_Click"
-                android:textOff=""
-                android:textOn=""
-                tools:layout_editor_absoluteX="246dp"
-                tools:layout_editor_absoluteY="71dp" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
         </LinearLayout>
 
-</LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+            <ToggleButton
+                android:id="@+id/garage_light"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
+            <ToggleButton
+                android:id="@+id/outside_light"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
+            <ToggleButton
+                android:id="@+id/fountain_light"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="30dp"
+                android:textOn="Усан оргилуур"
+                android:textOff="Усан оргилуур"
+                android:onClick="fountain_gear_Click"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -12,7 +12,10 @@ import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -41,11 +44,18 @@ public class MainActivity extends AppCompatActivity {
     ConnectedThread mConnectedThread;
     Button mButton;
     private boolean isConnected = false;
+    LinearLayout page1;
+    LinearLayout page2;
+    private boolean isFirstPage = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        page1 = (LinearLayout) findViewById(R.id.page1);
+        page2 = (LinearLayout) findViewById(R.id.page2);
+
 
         Log.d("hey", "jude");
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -556,5 +566,35 @@ public class MainActivity extends AppCompatActivity {
                 mConnectedThread.write(b);
             }
         }
+    }
+
+    public void curtain_activity(View view)
+    {}
+    public void security_Click(View view)
+    {}
+    public void light_activity(View view)
+    {
+        page1.setVisibility(View.INVISIBLE);
+        page2.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu)
+    {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(!isFirstPage) {
+            int menuItemSelected = item.getItemId();
+            if (menuItemSelected == R.id.back) {
+                page2.setVisibility(View.INVISIBLE);
+                page1.setVisibility(View.VISIBLE);
+            }
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
