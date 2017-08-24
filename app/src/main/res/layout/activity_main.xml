@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="invisible"
+        android:visibility="visible"
         android:padding="20dp">
     <LinearLayout
         android:layout_width="match_parent"
@@ -94,7 +94,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:visibility="visible">
+        android:padding="20dp"
+        android:visibility="invisible">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -109,7 +110,7 @@
                 android:padding="30dp"
                 android:textOn="Усан оргилуур"
                 android:textOff="Усан оргилуур"
-                android:onClick="fbutton_on_Click"/>
+                android:onClick="button_on_Click"/>
 
             <ToggleButton
                 android:id="@+id/room2_light"

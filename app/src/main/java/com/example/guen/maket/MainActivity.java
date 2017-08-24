@@ -576,6 +576,17 @@ public class MainActivity extends AppCompatActivity {
     {
         page1.setVisibility(View.INVISIBLE);
         page2.setVisibility(View.VISIBLE);
+        isFirstPage = false;
+    }
+    public void button_on_Click(View view)
+    {
+        String IdAsString = view.getResources().getResourceEntryName(view.getId());
+        boolean checked = ((ToggleButton)view).isChecked();
+        if(checked)
+            IdAsString += "_on";
+        else
+            IdAsString += "_off";
+        Log.d("maketa", IdAsString);
     }
 
     @Override
@@ -592,6 +603,7 @@ public class MainActivity extends AppCompatActivity {
             if (menuItemSelected == R.id.back) {
                 page2.setVisibility(View.INVISIBLE);
                 page1.setVisibility(View.VISIBLE);
+                isFirstPage = true;
             }
 
         }
