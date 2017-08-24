@@ -423,155 +423,10 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
-    public void room1_gear_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM1_GON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM1_GOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room2_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM2_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM2_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room2_gear_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM2_GON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM2_GOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room3_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM3_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM3_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room3_gear_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM3_GON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM3_GOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room4_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM4_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM4_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room5_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM5_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM5_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room6_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM6_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM6_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
 
     public void curtain_activity(View view)
     {}
-    public void security_Click(View view)
-    {}
+
     public void light_activity(View view)
     {
         page1.setVisibility(View.INVISIBLE);
@@ -580,13 +435,17 @@ public class MainActivity extends AppCompatActivity {
     }
     public void button_on_Click(View view)
     {
-        String IdAsString = view.getResources().getResourceEntryName(view.getId());
-        boolean checked = ((ToggleButton)view).isChecked();
-        if(checked)
-            IdAsString += "_on";
-        else
-            IdAsString += "_off";
-        Log.d("maketa", IdAsString);
+        if(isConnected) {
+            String IdAsString = view.getResources().getResourceEntryName(view.getId());
+            boolean checked = ((ToggleButton) view).isChecked();
+            if (checked)
+                IdAsString += "_on";
+            else
+                IdAsString += "_off";
+            Log.d("maketa", IdAsString);
+            byte[] b = IdAsString.getBytes();
+            mConnectedThread.write(b);
+        }
     }
 
     @Override
