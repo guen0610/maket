@@ -46,6 +46,7 @@ public class MainActivity extends AppCompatActivity {
     private boolean isConnected = false;
     LinearLayout page1;
     LinearLayout page2;
+    LinearLayout page3;
     private boolean isFirstPage = true;
 
     @Override
@@ -55,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
 
         page1 = (LinearLayout) findViewById(R.id.page1);
         page2 = (LinearLayout) findViewById(R.id.page2);
-
+        page3 = (LinearLayout) findViewById(R.id.page3);
 
         Log.d("hey", "jude");
         mBluetoothAdapter = BluetoothAdapter.getDefaultAdapter();
@@ -297,135 +298,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void fountain_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.FOUNTAIN_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.FOUNTAIN_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void fountain_gear_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.FOUNTAIN_GON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.FOUNTAIN_GOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void garage_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.GARAGE_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.GARAGE_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void garage_gear_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.GARAGE_GON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.GARAGE_GOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void roadBlock_gear_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROADBLOCK_GON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROADBLOCK_GOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void outside_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.OUTSIDE_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.OUTSIDE_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
-    public void room1_light_Click(View view)
-    {
-        boolean checked = ((ToggleButton) view).isChecked();
-        if(checked)
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM1_LON.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-        else
-        {
-            if (isConnected) {
-                byte[] b = Constants.ROOM1_LOFF.getBytes();
-                mConnectedThread.write(b);
-            }
-        }
-    }
 
     public void curtain_activity(View view)
-    {}
+    {
+        page1.setVisibility(View.INVISIBLE);
+        page3.setVisibility(View.VISIBLE);
+        isFirstPage = false;
+    }
 
     public void light_activity(View view)
     {
@@ -461,6 +340,7 @@ public class MainActivity extends AppCompatActivity {
             int menuItemSelected = item.getItemId();
             if (menuItemSelected == R.id.back) {
                 page2.setVisibility(View.INVISIBLE);
+                page3.setVisibility(View.INVISIBLE);
                 page1.setVisibility(View.VISIBLE);
                 isFirstPage = true;
             }

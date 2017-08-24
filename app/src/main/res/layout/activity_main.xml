@@ -51,14 +51,13 @@
             android:textOn="Замын хаалт"
             android:textOff="Замын хаалт"
             android:onClick="button_on_Click"/>
-        <ToggleButton
+        <Button
             android:id="@+id/curtains"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:padding="30dp"
-            android:textOn="Хөшиг"
-            android:textOff="Хөшиг"
+            android:text="Хөшиг"
             android:onClick="curtain_activity"/>
     </LinearLayout>
 
@@ -78,15 +77,14 @@
             android:textOff="Галын дохиолол"
             android:textOn="Галын дохиолол" />
 
-        <ToggleButton
+        <Button
             android:id="@+id/lights"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:onClick="light_activity"
             android:padding="30dp"
-            android:textOff="Гэрэл"
-            android:textOn="Гэрэл" />
+            android:text="Гэрэл" />
     </LinearLayout>
     </LinearLayout>
     <LinearLayout
@@ -201,5 +199,40 @@
                 android:onClick="button_on_Click"/>
 
         </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/page3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:visibility="invisible">
+        <ToggleButton
+            android:id="@+id/curtain1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Усан оргилуур"
+            android:textOff="Усан оргилуур"
+            android:onClick="button_on_Click"/>
+        <ToggleButton
+            android:id="@+id/curtain2"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Усан оргилуур"
+            android:textOff="Усан оргилуур"
+            android:onClick="button_on_Click"/>
+        <ToggleButton
+            android:id="@+id/curtain3"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="30dp"
+            android:textOn="Усан оргилуур"
+            android:textOff="Усан оргилуур"
+            android:onClick="button_on_Click"/>
     </LinearLayout>
 </FrameLayout>
